@@ -1,73 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, createElement, Image, SafeAreaView, TouchableOpacity } from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, View} from 'react-native';
+import { Button, Input, Text } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome'
+import styles from './style/MainStyle'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import primeira from './screens/primeira'
+
+
+ const Stack=[createStackNavigatior()] 
  
- 
+ function MyStack(){
+  return(
+    <Stack.Navigatior>
+      <Stack.Screen name="Home"component={Home}/>
+      <Stack.Screen name= "Segunda" component={Segunda}/>
+      <Stack.Screen name= "Terceira" component={Terceira}/>
+      <Stack.Screen name= "Quarta" component={Quarta}/>
+      <Stack.Screen name= "Quinta" component={Quinta}/>
+
+    </Stack.Navigatior>
+
+
+
+  )
+ }
+
+
+
+
 export default function App() {
-  const [textoInicial, setTextoInicial,] = useState("");
-  
-  
-  function showText() {
-
-  }
-
-  function setTextoInicial() {
-    textoInicial = "Eu sou a gabi!:)";
-  }
-
-  return (
-      <View style={styles.container}>
-        
-      <Text style ={{color:"Black", 
-        fontSize: 80, 
-        margin: 20,}}>
-        GABI    
-      </Text>
-
-      <TouchableOpacity>
-      style= {styles.buttongabi}
-        <Image>
-          source= {require('Fotogabi.jpg')}
-          style= {styles.fotobuttongabi}
-        </Image>
-      </TouchableOpacity>
-
-      <Button title = 'Next'/>
-      style={styles.tecla}/>
-      <Image source={require('Fotogabi.jpg')}/>
-      style={styles.logo}/>
-      <StatusBar style="auto" />
-
-      <TouchableHighlight onPress={() => this.showText()}>
-        <Image source={require('Fotogabi.jpg')}/>
-      </TouchableHighlight>
-
-      <Text>{textoInicial}</Text>
-      </View>
-    );
   
   
 }
- 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
-
-  },
-
-  logo:{
-    alignItems:"stretch"
-  }
-  
-  ,
-  tecla:{
-  alignItems:"flex-end"
-  
-  }
-  
-});
-
  
