@@ -1,0 +1,25 @@
+import React, {useState} from 'react';
+import {Text, View, StatusBar,Image} from 'react-native';
+import Image from './assets/inovaçao.gif'
+import Image from './assets/viagem.gif'
+import Image from './assets/Volei.gif'
+
+export default function Quarta() {
+    return(
+        <View>
+            
+            <Text> Um pouco do que gosto: </Text>
+            <StatusBar style="auto" />
+            
+            
+      
+            <Image> source= {require('./assets/inovaçao.gif')}</Image>
+            <Image> source= {require('./assets/viagem.gif')}</Image>
+            <Image> source= {require('./assets/Volei.gif')}</Image>
+
+
+        </View>
+    )
+
+    
+}
