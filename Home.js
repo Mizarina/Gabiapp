@@ -1,13 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, createElement, Image, SafeAreaView, TouchableOpacity, TouchableHighlight } from 'react-native';
+import Image from './assets/Fotogabi.png'
  
  
-export default function primeira() {
-  const [textoImagem, setTextoImagem,] = useState("");
+export default function Home() {
+  const [textoImagem, setTextoImagem,] = UseState("");
   
-
-  return (
+    return (
       <View style={styles.container}>
         
       <Text style ={{color:"Black", 
@@ -24,23 +24,28 @@ export default function primeira() {
         </Image>
       </TouchableOpacity>
 
-      <Button title = 'Next'
-      style={styles.tecla}/>
+
       
-      <StatusBar style="auto" />
+ <StatusBar style="auto" />
 
       <TouchableHighlight onPress={() => setTextoImagem("Meu nome é Gabriela, tenho 17 anos, Sou do curso de Estradas e tenho interesse pela área de Tecnologia,Inovação e empreendedorismo.")}>
-        <Image source={require('./assets/Fotogabi.png')}/>
+        <Image> source={require('./assets/Fotogabi.png')}</Image>
       </TouchableHighlight>
 
       <Text>{textoImagem}
       
       </Text>
+
+      <Button
+        title="Next"
+        onPress={() => navigation.navigate('Segunda')} />
+
       </View>
     );
-  
-  
 }
+  
+  
+
  
 const styles = StyleSheet.create({
   container: {
@@ -62,3 +67,10 @@ const styles = StyleSheet.create({
   }
   
 });
+
+  
+
+  
+  
+
+  
