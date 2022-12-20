@@ -1,25 +1,85 @@
 import React, {useState} from 'react';
-import {Text, View, StatusBar,Image} from 'react-native';
-import Image from './assets/inovaçao.gif'
-import Image from './assets/viagem.gif'
-import Image from './assets/Volei.gif'
+import {Text, View, StatusBar,Image,Button,StyleSheet} from 'react-native';
 
-export default function Quarta() {
+
+export default function Quarta({navigation}) {
     return(
-        <View>
+
+
+        
+
+
+
+
+        <View style={styles.container}>
             
-            <Text> Um pouco do que gosto: </Text>
+            <Text style={{ color :'black',
+            fontSize: 30,
+            fontStyle: 'font-style: obliquo',
+            fontWeight: 'bold',
+            fontFamily: 'Georgia',
+            textAlign: 'center',
+            margin: 10
+
+            }}>  GIF'S </Text>
             <StatusBar style="auto" />
             
             
-      
-            <Image> source= {require('./assets/inovaçao.gif')}</Image>
-            <Image> source= {require('./assets/viagem.gif')}</Image>
-            <Image> source= {require('./assets/Volei.gif')}</Image>
+            <View style={styles.icons}>
+              
+              <View>
+              <Image
+                source={require('../assets/inovaçao.gif')}
+                style = {{
+                  width: '100px',
+                  height: '100px',
 
+                }}
 
+              />
+              
+              <Text style={{textAlign:'center',  fontFamily: 'FreeMono', margin:5}}>
+              Inovation</Text>
+              </View>
+              <View>
+              <Image source= {require('../assets/viagem.gif')}
+              style={{ width: "100px", height: "100px", resizeMode: 'contain', }}/>
+              <Text style={{textAlign:'center',  fontFamily: 'FreeMono', margin:5}}> Travel</Text>
+              </View>
+              <View>
+
+              
+              <Image source= {require('../assets/Volei.gif')}
+              style={{ width: '100px', height: '100px', resizeMode: 'contain',}}/>
+              <Text style={{textAlign:'center',  fontFamily: 'FreeMono', margin:5}}> Volleyball </Text>
+              </View>
+            </View>
+            
+           <View style={{marginLeft: 250}}> 
+          <Button title="Next" 
+          color = '#F4A460'
+        justifyContent= 'space-between'
+        flexDirection= 'row'
+        onPress={() => navigation.navigate('Quinta')} />
+
+         </View>
         </View>
     )
 
     
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFF8DC',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  icons: {
+    display: "flex",
+    flexDirection: "row",
+    
+  }
+})
